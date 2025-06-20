@@ -1,3 +1,15 @@
+#Pseuodocode:
+#prompt the user for inputs of pizza size, number of toppings, and how many miles for delivery
+#calculate the base cost of the pizza:
+  #if the user wants a small pizza it will be $8
+  #if the user wants a large pizza it will be $12
+#add one dollar for every topping the user wants 
+#calculate the cost of delivery:
+  #if between 1 and 5 miles, add $2
+  #if more than 5mi, add $1 for every additional mile
+#sum the total cost of the pizza(base cost + toppings + delivery)
+#display cost for user 
+
 def pizza_size(size):
   if size == "small":
     return 8
@@ -5,7 +17,10 @@ def pizza_size(size):
     return 12
   
 def delivery(miles):
-  if miles <= 5 and miles > 0:
+  if miles > 50:
+    print("Delivery out of range, please come for pick up")
+    return 0
+  elif miles <= 5 and miles > 0:
     return 2
   elif miles > 5:
     return 2 + (miles-5) 
